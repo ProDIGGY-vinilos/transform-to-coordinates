@@ -1,1 +1,67 @@
-<p>input-form works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="inputForm">
+  <div class="input-div">
+    <label for="direccion">Direccion</label>
+    <input
+      type="text"
+      id="direccion"
+      name="direccion"
+      required
+      formControlName="direccion"
+    />
+    <div
+      *ngIf="inputForm.get('direccion')?.touched && inputForm.get('direccion')?.errors?.['required']"
+      class="text-danger"
+    >
+      This field is required.
+    </div>
+  </div>
+  <div class="input-div">
+    <label for="localidad">Localidad</label>
+    <input
+      type="text"
+      id="localidad"
+      name="localidad"
+      required
+      formControlName="localidad"
+    />
+    <div
+      *ngIf="inputForm.get('localidad')?.touched && inputForm.get('localidad')?.errors?.['required']"
+      class="text-danger"
+    >
+      This field is required.
+    </div>
+  </div>
+  <div class="input-div">
+    <label for="provincia">Provincia</label>
+    <input
+      type="text"
+      id="provincia"
+      name="provincia"
+      required
+      formControlName="provincia"
+    />
+    <div
+      *ngIf="inputForm.get('provincia')?.touched && inputForm.get('provincia')?.errors?.['required']"
+      class="text-danger"
+    >
+      This field is required.
+    </div>
+  </div>
+  <div class="input-div">
+    <label for="pais">Pais</label>
+    <input type="text" id="pais" name="pais" required formControlName="pais" />
+    <div
+      *ngIf="inputForm.get('pais')?.touched && inputForm.get('pais')?.errors?.['required']"
+      class="text-danger"
+    >
+      This field is required.
+    </div>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!inputForm.valid">
+      Buscar coordenadas
+    </button>
+    <button type="button" (click)="limpiaForm()">Limpiar campos</button>
+  </div>
+</form>
+<app-show-result [address]="address"></app-show-result>
