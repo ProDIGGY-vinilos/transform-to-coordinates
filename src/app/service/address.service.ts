@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Address } from '../model/address';
 import { Observable } from 'rxjs';
-import { environment } from '../../environment/environment';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -15,7 +14,7 @@ export class AddressService {
     return await this.http
       .get<any>(
         `https://maps.googleapis.com/maps/api/geocode/json?address=
-    ${address.domicilio}&key=${environment.API_URL}`
+    ${address.domicilio}&key=${import.meta.env['NG_APP_API']}`
       )
       .pipe(
         map((data: any) => {
