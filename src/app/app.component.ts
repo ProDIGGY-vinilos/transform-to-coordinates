@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'transform-to-coordinates';
+  title = 'transform-to-coordinates :)';
 }
