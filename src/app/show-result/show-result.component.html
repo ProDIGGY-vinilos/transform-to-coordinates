@@ -1,10 +1,20 @@
 <div class="show-result">
-  <p>La direccion ingresada es:</p>
-  <p>{{ address.domicilio }}</p>
-  <p>Latitud:</p>
-  <p>{{ address.lat }}</p>
-  <p>Longitud:</p>
-  <p>{{ address.long }}</p>
-  <p>Location type:</p>
-  <p>{{ address.location_type }}</p>
+  <div id="dir-container">
+    <p class="p-campo">La direccion ingresada es:</p>
+    <p class="p-variable">{{ address.domicilio }}</p>
+  </div>
+  <div class="coord-container">
+    <div id="lat">
+      <p class="p-campo">Latitud:</p>
+      <p class="p-variable">{{ address.lat }}</p>
+    </div>
+    <div id="long">
+      <p class="p-campo">Longitud:</p>
+      <p class="p-variable">{{ address.long }}</p>
+    </div>
+  </div>
+  <div id="loc-type">
+    <p class="p-campo">Location type:</p>
+    <p class="p-variable">{{ address.location_type }}</p>
+  </div>
 </div>
